@@ -1,0 +1,12 @@
+import maya.cmds as cmds
+
+sel = cmds.ls(selection=True)
+if not sel:
+  raise  Exception('no selection')
+  
+for sel in sel:
+  cmds.select(sel)
+  loc = cmds.spaceLocator()
+  con = cmds.parentConstraint(sel, loc, mo=False)
+  sca = cmds.scaleConstraint(sel, loc)
+  cmds.delete(con, sca)
