@@ -1,0 +1,20 @@
+// drag and drop this file to install Open current file folder script
+// for windows system only
+global string $gShelfTopLevel;
+string $currentShelf = `tabLayout -q -st $gShelfTopLevel`;
+string $cmd="\nglobal proc open_file_folder_in_explorer()\
+\n{\
+\n    string $path =dirname( `file -q -sn ` );\
+\n    $path=toNativePath ($path);\
+\n    system(\"echo|set /p=\" + $path + \"|clip\");\
+\n    exec(\"explorer  \" + $path);\
+\n}\
+\n open_file_folder_in_explorer();";
+shelfButton
+   	-command ($cmd)
+    -annotation "open current file folder in explorer. And save this path to windows buffer"
+    -label ""
+    -imageOverlayLabel ""
+    -image ("fileOpen.png" )
+    -sourceType "mel"
+    -parent $currentShelf;
