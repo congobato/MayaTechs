@@ -1,3 +1,14 @@
+HOW To USE
+----------------------
+Work with multiple selection.
+Work on Vertices / meshes / controllers0.
+On Every Frame : snap locator to selection on 1's.
+On Keyframes : snap locator to selection only on selection keyframes.
+World space driver : create new locator that drive the selection. (= set the selection to world space ).
+Zero group : All transforms will be on a group above the locator. Locator will be zero out.
+Zero group > Parent Constraint : Selection drive a new locator group (= Rivet).
+
+-----------------------
 1_Download archive file from gumroad.com/jop (location of download does not matter).
 2_Extract the file
 3_Drap and drop the install.mel file into maya 
